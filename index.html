@@ -8,27 +8,36 @@
         
     </form>
 </body>
+<div class="main">
+<div class="form">
 <form>
     <p>First Name:</p> 
-    <Input type="text" name="first_name" placeholder="Enter First Name"></Input><br>
+    <Input type="text" name="first_name" required autocomplete="on" placeholder="Enter First Name">
     <p>Last Name:</p> 
-    <Input type="text" name="las_name" placeholder="Enter Last Name"></Input><br>
+    <Input type="text" name="las_name" placeholder="Enter Last Name" autocomplete="on" >
     <p>Email:</p> 
-    <Input type="email" name="email" placeholder="Enter Email"></Input><br>
+    <Input type="email" name="email" placeholder="Enter Email" autocomplete="on" required>
+    <p>Address:</p>
+    <input type="address" name="address" placeholder="Enter Address" required>
     <p>Password:</p> 
-    <Input type="password" name="password" placeholder="Password"></Input><br>
+    <Input type="password" name="password" autocomplete="new-password" placeholder="Password" required>
     <p>Birthdate:</p> 
-    <Input type="date" name="birthday" placeholder="First Name"></Input><br>
+    <Input type="date" name="birthday">
     <p>Gender:</p>
-    <input type="radio" name="gender" value="Male"><p>Male</p>
-    <input type="radio" name="gender" value="Female"><p>Female</p
-    <input type="radio" name="gender" value="rather_not_say"><p>Rather no say</p> <br>
+    <input type="radio" name="gender" value="Male"> <label for="">Male</label> <br>
+    <input type="radio" name="gender" value="Female"> <label for="">Female</label> <br>
+    <input type="radio" name="gender" value="rather_not_say"> <label for="">Rather no say</label> <br>
     <p>Hobbies:</p>
-    <input type="checkbox"  name="hobby1" value="Reading">
-    <input type="checkbox"  name="hobby2" value="Gaming">
-    <input type="checkbox"  name="robby3" value="Singing">
-
+    <input type="checkbox"  name="hobby1" value="Reading"> <label for="">Reading</label> <br>
+    <input type="checkbox"  name="hobby2" value="Gaming"> <label for="">Gaming</label> <br>
+    <input type="checkbox"  name="robby3" value="Singing"> <label for="">Singing</label> <br>
+    <p>Profile Picture</p>
+    <input type="file" name="profile_picture" required> <br> <br>
+    <input type="button" value="Click me!" name="click_button"> 
+    <input type="submit" name="submit">
+    <input type="reset" name="reset">
 
 </form>
-
+</div>
+</div>
 </html>
