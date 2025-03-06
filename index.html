@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
     <title>FORM</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -8,19 +10,19 @@
         
     </form>
 </body>
-<div class="main">
+<div class="main_body">
 <div class="form">
 <form>
     <p>First Name:</p> 
     <Input type="text" name="first_name" required autocomplete="on" placeholder="Enter First Name">
     <p>Last Name:</p> 
-    <Input type="text" name="las_name" placeholder="Enter Last Name" autocomplete="on" >
+    <Input type="text" name="last_name" placeholder="Enter Last Name" autocomplete="on" >
     <p>Email:</p> 
     <Input type="email" name="email" placeholder="Enter Email" autocomplete="on" required>
     <p>Address:</p>
-    <input type="address" name="address" placeholder="Enter Address" required>
+    <input type="text" name="address" placeholder="Enter Address" required>
     <p>Password:</p> 
-    <Input type="password" name="password" autocomplete="new-password" placeholder="Password" required>
+    <Input type="password" name="password" autocomplete="new-password" placeholder="Enter Password" required>
     <p>Birthdate:</p> 
     <Input type="date" name="birthday">
     <p>Gender:</p>
@@ -30,7 +32,13 @@
     <p>Hobbies:</p>
     <input type="checkbox"  name="hobby1" value="Reading"> <label for="">Reading</label> <br>
     <input type="checkbox"  name="hobby2" value="Gaming"> <label for="">Gaming</label> <br>
-    <input type="checkbox"  name="robby3" value="Singing"> <label for="">Singing</label> <br>
+    <input type="checkbox"  name="hobby3" value="Singing"> <label for="">Singing</label> <br>
+    <p>Department:</p>
+    <select name="department" >
+        <option value="cse">CSE</option>
+        <option value="bba">BBA</option>
+        <option value="bass">BASS</option>
+    </select>
     <p>Profile Picture</p>
     <input type="file" name="profile_picture" required> <br> <br>
     <input type="button" value="Click me!" name="click_button"> 
