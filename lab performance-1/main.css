@@ -1,0 +1,257 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+.form {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideIn 0.8s ease-out;
+}
+
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+    outline: none;
+}
+
+
+input:focus, select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.7);
+}
+
+
+input[type="submit"] {
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+input[type="submit"]::after {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: transform 0.5s ease;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+
+input[type="submit"]:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+input[type="submit"]:hover {
+    background: #388E3C;
+}
+
+
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007BFF;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+
+.profile-container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.profile-container img:hover {
+    transform: scale(1.1);
+}
+
+
+.header {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+
+.logout-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    animation: bounce 1.5s infinite alternate;
+}
+
+.logout-btn:hover {
+    background: #cc0000;
+}
+
+
+.login-btn {
+    background: #28a745;
+    animation: bounce 1.5s infinite alternate;
+}
+
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+
+@media (max-width: 600px) {
+    .form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile-container {
+        width: 90%;
+    }
+}
+
+
+.otp-container {
+    display: flex;
+    gap: 10px;
+}
+
+.otp-container input {
+    flex: 1;
+}
+
+.otp-btn {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.otp-btn:hover {
+    background: #0056b3;
+}
+
+
+.hidden-checkbox {
+    display: none;
+}
+
+.auth-btn {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.auth-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-btn {
+    background: #28a745;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+}
+
+.auth-btn:hover {
+    opacity: 0.8;
+}
+
+.logout-btn {
+    display: none;
+}
+
+#login-state:checked ~ .header .login-btn {
+    display: none;
+}
+
+#login-state:checked ~ .header .logout-btn {
+    display: inline-block;
+}
