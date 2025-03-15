@@ -1,34 +1,103 @@
-.main_body
-{
-    background: radial-gradient(circle,green,yellow) ;
-    border-radius: 10pc;
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-
-.form
-{
-    display: inline-block;
-    margin-left: 35%;
-    margin-top: 35%;
-    border-radius: 7px;
-    padding: 10px;
+body {
+    display: flex;
     justify-content: center;
-    scroll-behavior: smooth;
-}
-input
-{
-    border-radius:5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    height: 20px;
-    
-}
-input::placeholder
-{
-    padding-left: 3px;
-    color : gray;
-    opacity: 0.8;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
 }
 
+/* Form Container */
+.form {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
 
+/* Form Headings */
+.form p {
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Input Focus Effect */
+input:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Gender & Hobbies Styling */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+label {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Buttons */
+input[type="button"], input[type="submit"], input[type="reset"] {
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: #388E3C;
+}
+
+/* File Input */
+input[type="file"] {
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form {
+        width: 90%;
+        padding: 15px;
+    }
+}
