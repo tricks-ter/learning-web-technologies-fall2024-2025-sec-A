@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Radio Selection Validation</title>
+  <style>
+    .hint { border-bottom: 1px dotted; cursor: help; }
+    fieldset { margin-bottom: 15px; }
+    label { display: inline-block; width: 150px; }
+  </style>
+  <script>
+    function validateForm() {
+      var options = document.getElementsByName("choice");
+      var selected = false;
+      for(var i = 0; i < options.length; i++){
+        if(options[i].checked) { selected = true; break; }
+      }
+      if(!selected) {
+        alert("Select at least one option");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <fieldset>
+      <legend>Option Selection</legend>
+      
+      <input type="radio" id="opt1" name="choice" value="male">
+      <label for="opt1">Male</label>
+      <input type="radio" id="opt2" name="choice" value="female">
+      <label for="opt2">Female</label>
+      <input type="radio" id="opt3" name="choice" value="others">
+      <label for="opt3">Others</label>
+    </fieldset>
+    <input type="submit" name="submit" value="submit">
+  </form>
+</body>
+</html>

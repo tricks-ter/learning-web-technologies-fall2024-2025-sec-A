@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkbox Validation</title>
+  <style>
+    body {  font-family: Arial, sans-serif; margin: 20px; }
+    fieldset { margin-bottom: 20px; padding: 10px; }
+    legend { font-weight: bold; }
+    p.error { color: red; }
+    p.success { color: green; }
+    label { display: inline-block;margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>Checkbox Selection</legend>
+    <input type="checkbox" name="option" />
+    <label> SSC</label>
+    <input type="checkbox" name="option" />
+    <label> HSC</label>
+    <label><input type="checkbox" name="option" /> BSc</label>
+    <p id="checkboxError" class="error"></p>
+  </fieldset>
+  <button type="button" onclick="validateCheckbox()">Check Selection</button>
+    
+
+  <script>
+    function validateCheckbox() {
+      let checkboxes = document.querySelectorAll('input[name="option"]:checked');
+      let error = document.getElementById("checkboxError");
+      error.textContent = "";
+      error.className = "error";
+      
+      if (checkboxes.length === 0) {
+        error.textContent = "At least one checkbox must be selected.";
+      } else {
+        error.textContent = "Valid selection!";
+        error.className = "success";
+      }
+    }
+  </script>
+</body>
+</html>

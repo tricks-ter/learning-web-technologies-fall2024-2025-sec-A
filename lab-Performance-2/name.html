@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Name Validation</title>
+  <style>
+    .hint { border-bottom: 1px dotted; cursor: help; }
+    fieldset { margin-bottom: 15px; }
+    label { display: inline-block; width: 150px; }
+  </style>
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value.trim();
+      if(name === "") {
+        alert("Name cannot be empty");
+        return false;
+      }
+      var parts = name.split(" ");
+      var count = 0;
+      for(var i = 0; i < parts.length; i++){
+        if(parts[i] !== "") count++;
+      }
+      if(count < 2) {
+        alert("Name must contain at least two words");
+        return false;
+      }
+      for(var i = 0; i < name.length; i++){
+        var ch = name.charAt(i);
+        if(ch === " ") continue;
+        var code = ch.charCodeAt(0);
+        if(!((code >= 65 && code <= 90) || (code >= 97 && code <= 122) || ch === "." || ch === "-")){
+          alert("Name can contain only letters, dot or dash");
+          return false;
+        }
+      }
+      var first = name.charAt(0);
+      var code = first.charCodeAt(0);
+      if(!((code >= 65 && code <= 90) || (code >= 97 && code <= 122))){
+        alert("Name must start with a letter");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+     
+      <hr>
+      <input type="submit" name="submit" value="submit">
+    </fieldset>
+  </form>
+</body>
+</html>

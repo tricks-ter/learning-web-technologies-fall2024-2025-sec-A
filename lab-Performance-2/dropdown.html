@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    fieldset { margin-bottom: 20px; padding: 10px; }
+    legend { font-weight: bold; }
+    p.error { color: red; }
+    p.success { color: green; }
+    label, select { display: block; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>Dropdown Selection</legend>
+    <label for="dropdown">Blood Group:</label>
+    <select id="dropdown">
+      <option value="">select Blood Group</option>
+      <option value="option1">A+</option>
+      <option value="option2">A-</option>
+    </select>
+    <p id="dropdownError" class="error"></p>
+  </fieldset>
+  <button type="button" onclick="validateDropdown()">Check Dropdown</button>
+    
+
+  <script>
+    function validateDropdown() {
+      let dropdown = document.getElementById("dropdown");
+      let error = document.getElementById("dropdownError");
+      error.textContent = "";
+      error.className = "error";
+      
+      if (dropdown.value === "") {
+        error.textContent = "You must select an option.";
+      } else {
+        error.textContent = "Valid selection!";
+        error.className = "success";
+      }
+    }
+  </script>
+</body>
+</html>

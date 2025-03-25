@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Email Validation</title>
+  <style>
+    .hint { border-bottom: 1px dotted; cursor: help; }
+    fieldset { margin-bottom: 15px; }
+    label { display: inline-block; width: 150px; }
+  </style>
+  <script>
+    function validateForm() {
+      var email = document.getElementById("email").value.trim();
+      if(email === "") {
+        alert("Email cannot be empty");
+        return false;
+      }
+      var atPos = email.indexOf("@");
+      var dotPos = email.lastIndexOf(".");
+      if(atPos < 1 || dotPos < atPos + 2 || dotPos + 2 > email.length) {
+        alert("Enter a valid email address");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+      <span class="hint" title="Enter a valid email e.g. anything@example.com">i</span>
+      <br>
+      <hr>
+      <input type="submit" name="submit" value="submit">
+    </fieldset>
+  </form>
+</body>
+</html>

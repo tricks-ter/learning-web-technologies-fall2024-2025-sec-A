@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    fieldset { margin-bottom: 20px; padding: 10px; }
+    legend { font-weight: bold; }
+    p.error { color: red; }
+    p.success { color: green; }
+    input { margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>Date Validation (dd-mm-yyyy)</legend>
+    <label for="date">Enter Date:</label>
+    <input type="text" id="date" placeholder="dd-mm-yyyy" />
+    <button type="button" onclick="validateDate()">Check Date</button>
+    <p id="dateError" class="error"></p>
+  </fieldset>
+
+  <script>
+    function validateDate() {
+      let date = document.getElementById("date").value.trim();
+      let error = document.getElementById("dateError");
+      error.textContent = "";
+      error.className = "error";
+      
+      let parts = date.split("-");
+      if (parts.length !== 3) {
+        error.textContent = "Invalid format. Use dd-mm-yyyy.";
+        return;
+      }
+      
+      let day = Number(parts[0]);
+      let month = Number(parts[1]);
+      let year = Number(parts[2]);
+      
+      if (isNaN(day) || isNaN(month) || isNaN(year)) {
+        error.textContent = "Date must contain only numbers.";
+        return;
+      }
+      
+      if (day < 1 || day > 31) {
+        error.textContent = "Day must be between 1 and 31.";
+        return;
+      }
+      if (month < 1 || month > 12) {
+        error.textContent = "Month must be between 1 and 12.";
+        return;
+      }
+      if (year < 1900 || year > 2016) {
+        error.textContent = "Year must be between 1900 and 2016.";
+        return;
+      }
+      
+      error.textContent = "Valid date!";
+      error.className = "success";
+    }
+  </script>
+</body>
+</html>

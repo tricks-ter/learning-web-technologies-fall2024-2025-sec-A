@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User ID and Picture Upload Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    fieldset { margin-bottom: 20px; padding: 10px; }
+    legend { font-weight: bold; }
+    p.error { color: red; }
+    p.success { color: green; }
+    label { display: inline-block; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>User ID and Picture Upload</legend>
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" /> <br> <br>
+    <label for="picture">Upload Picture:</label>
+    <input type="file" id="picture" />
+    <p id="userError" class="error"></p>
+  </fieldset>
+  <button type="button" onclick="validateUser()">Check User Info</button>
+    
+
+  <script>
+    function validateUser() {
+      let userId = document.getElementById("userId").value.trim();
+      let pictureCount = document.getElementById("picture").files.length;
+      let error = document.getElementById("userError");
+      error.textContent = "";
+      error.className = "error";
+      
+      if (userId === "" || isNaN(userId) || Number(userId) <= 0) {
+        error.textContent = "User ID must be a positive number & Should not be empty.";
+        return;
+      }
+      
+      if (pictureCount === 0) {
+        error.textContent = "You must upload a picture.";
+        return;
+      }
+      
+      error.textContent = "Valid inputs!";
+      error.className = "success";
+    }
+  </script>
+</body>
+</html>
